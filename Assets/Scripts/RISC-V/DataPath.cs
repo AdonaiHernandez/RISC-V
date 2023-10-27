@@ -15,8 +15,8 @@ namespace Assets.Scripts.RISC_V
         private Memory dataMem;
         private ALU alu;
         private Register instructionRegister;
-
-        public DataPath(){
+        private static DataPath _instance;
+        private DataPath(){
 
             this.programCounter = new Register();
             this.rBank = RegisterBank.getInstance();
@@ -25,6 +25,13 @@ namespace Assets.Scripts.RISC_V
             this.alu = ALU.getInstance();
 
             this.programCounter.setValue(0);
+        }
+
+        public static DataPath getInstance(){
+            if (_instance == null){
+                _instance = new DataPath();
+            }
+            return _instance;
         }
         
         public void fetchInstruction(){
