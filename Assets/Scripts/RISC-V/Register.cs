@@ -2,17 +2,17 @@
 {
     internal class Register {
 
-        private uint value;
+        private int value;
 
         public Register() {
             this.value = 0;
         }
 
-        public uint getValue() {
+        public int getValue() {
             return value;
         }
 
-        public void setValue(uint newValue) { 
+        public void setValue(int newValue) { 
         
             this.value = newValue;
         

@@ -22,9 +22,9 @@ namespace Assets.Scripts.RISC_V
         
         }
 
-        public uint compute(byte operation, uint operand1, uint operand2) { 
+        public int compute(byte operation, int operand1, int operand2) { 
         
-            uint result = 0;
+            int result = 0;
 
             switch (operation) { 
             
@@ -33,11 +33,11 @@ namespace Assets.Scripts.RISC_V
                 case 2: result = operand1 & operand2; break;
                 case 3: result = operand1 | operand2; break;
                 case 4: result = operand1 ^ operand2; break;
-                case 5: result = (uint)((int)operand1 << (int)operand2); break;
-                case 6: result = (uint)((int)operand1 >> (int)operand2); break;
-                case 7: result = (uint)((int)operand1 >> (int)operand2); break;
-                case 8: result = (uint)(operand1 < operand2 ? 1 : 0); break;
-                case 9: result = (uint)(operand1 > operand2 ? 1 : 0); break;
+                case 5: result = operand1 << (int)operand2; break;
+                case 6: result = operand1 >> (int)operand2; break;
+                case 7: result = operand1 >> operand2; break;
+                case 8: result = operand1 < operand2 ? 1 : 0; break;
+                case 9: result = operand1 > operand2 ? 1 : 0; break;
             }
             
             this.zero = result == 0;  

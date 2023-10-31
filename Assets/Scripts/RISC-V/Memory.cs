@@ -29,12 +29,12 @@ namespace Assets.Scripts.RISC_V
 
         }
 
-        public byte read(uint index)
+        public byte read(int index)
         {
             return data[index];
         }
 
-        public byte[] readBlock(uint index, int size)
+        public byte[] readBlock(int index, int size)
         {
             if (size <= 0 || index + size > this.size)
                 return null;

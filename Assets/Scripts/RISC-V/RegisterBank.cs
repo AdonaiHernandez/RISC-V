@@ -32,11 +32,11 @@ namespace Assets.Scripts.RISC_V
         
         }
 
-        public uint read(uint index) {
+        public int read(int index) {
             return bank[index].getValue();
         }
 
-        public void write(uint index, uint value)
+        public void write(int index, int value)
         {
             bank[index].setValue(value);
         }
